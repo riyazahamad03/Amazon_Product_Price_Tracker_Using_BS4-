@@ -25,13 +25,17 @@ def product_price():
         
 def send_message(bot_message):
 
-    bot_token = '1145135629:AAEOUYNdMrO7eujmgjlHdhvjK1E-2XYnIYY'
-    bot_chatID = '620621191'
+    bot_token = 'Your Bot Token'
+    bot_chatID = 'Your Bot Chat Id'
     send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + bot_message
 
     response = requests.get(send_text)
 
     return response.json()
+
+while True:
+    product_price()
+    time.sleep(5)
 
 while True:
     product_price()
